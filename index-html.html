@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ SUDESH JAY</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-3xl font-bold neon-text">DJ SUDESH JAY</h1>
+                <div class="audio-wave">
+                    <div class="audio-bar" style="animation-delay: -0.4s"></div>
+                    <div class="audio-bar" style="animation-delay: -0.3s"></div>
+                    <div class="audio-bar" style="animation-delay: -0.2s"></div>
+                    <div class="audio-bar" style="animation-delay: -0.1s"></div>
+                    <div class="audio-bar"></div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="hover:text-pink-500 transition-colors">Home</a>
+                <a href="#mixes" class="hover:text-pink-500 transition-colors">Mixes</a>
+                <a href="#events" class="hover:text-pink-500 transition-colors">Events</a>
+                <a href="#about" class="hover:text-pink-500 transition-colors">About</a>
+                <button onclick="showLoginModal()" class="hover:text-pink-500 transition-colors">Login</button>
+                <button onclick="showRegisterModal()" class="hover:text-pink-500 transition-colors">Register</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-custom opacity-60"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 neon-text">DJ SUDESH JAY</h1>
+            <p class="text-xl mb-8">Creating Unforgettable Musical Experiences</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.youtube.com/@SudeshJay" target="_blank" 
+                   class="px-8 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800">
+                    Subscribe
+                </a>
+                <a href="#mixes" class="px-8 py-3 rounded-full border-2 border-white hover:bg-white hover:text-black transition-colors">
+                    Latest Mixes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mixes Section -->
+    <section id="mixes" class="section py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center neon-text">Latest Mixes</h2>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-6 text-center">Featured Mix</h3>
+                <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
+                    <div id="featured-video"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect p-6 rounded-lg hover-scale">
+                    <h4 class="text-xl font-bold mb-4">Recent Uploads</h4>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <div id="recent-video"></div>
+                    </div>
+                </div>
+
+                <div class="glass-effect p-6 rounded-lg hover-scale">
+                    <h4 class="text-xl font-bold mb-4">Popular Mixes</h4>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <div id="popular-video"></div>
+                    </div>
+                </div>
+
+                <div class="glass-effect p-6 rounded-lg hover-scale">
+                    <h4 class="text-xl font-bold mb-4">DJ Sets Playlist</h4>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <div id="playlist-video"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section py-20 px-6 bg-black bg-opacity-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center neon-text">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-gradient p-6 rounded-lg hover-scale">
+                    <p class="text-pink-500 text-lg mb-2">DEC 25, 2024</p>
+                    <h3 class="text-xl font-bold mb-2">Christmas Night Special</h3>
+                    <p class="mb-4">Join us for an unforgettable night of music and celebration</p>
+                    <button class="px-6 py-2 bg-pink-500 rounded-full hover:bg-pink-600 transition-colors">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center neon-text">About DJ Sudesh Jay</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="assets/dj-profile.jpg" alt="DJ Sudesh Jay" class="rounded-lg hover-scale">
+                </div>
+                <div>
+                    <p class="text-lg mb-6">Professional DJ with a passion for creating unforgettable musical experiences. 
+                    Specializing in multiple genres and bringing energy to every event.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@SudeshJay" target="_blank" class="text-3xl text-red-500 hover:text-red-400">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+        <div class="glass-effect p-8 rounded-xl max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Login</h3>
+                <button onclick="closeLoginModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="mb-4">
+                    <label for="loginEmail" class="block mb-2">Email</label>
+                    <input type="email" id="loginEmail" required
+                           class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+                </div>
+                <div class="mb-6">
+                    <label for="loginPassword" class="block mb-2">Password</label>
+                    <input type="password" id="loginPassword" required
+                           class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+                </div>
+                <div class="flex justify-between items-center mb-6">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="mr-2">
+                        Remember me
+                    </label>
+                    <a href="#" class="text-pink-500 hover:text-pink-400">Forgot Password?</a>
+                </div>
+                <button type="submit" class="w-full py-2 bg-pink-500 rounded hover:bg-pink-600 transition-colors">
+                    Login
+                </button>
+                <p class="mt-4 text-center">
+                    Don't have an account? 
+                    <a href="#" onclick="toggleLoginRegister()" class="text-pink-500 hover:text-pink-400">Register</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+        <div class="glass-effect p-8 rounded-xl max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Create Account</h3>
+                <button onclick="closeRegisterModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="mb-4">
+                    <label for="registerName" class="block mb-2">Name</label>
+                    <input type="text" id="registerName" required
+                           class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+                </div>
+                <div class="mb-4">
+                    <label for="registerEmail" class="block mb-2">Email</label>
+                    <input type="email" id="registerEmail" required
+                           class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+                </div>
+                <div class="mb-6">
+                    <label for="registerPassword" class="block mb-2">Password</label>
+                    <input type="password" id="registerPassword" required
+                           class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+                </div>
+                <button type="submit" class="w-full py-2 bg-pink-500 rounded hover:bg-pink-600 transition-colors">
+                    Register
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/videos.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>
